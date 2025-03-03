@@ -10,10 +10,14 @@ private:
 
 public:
 
-    User() {
-        std::cout << "\n";
+    User() 
+    {    /* default constructor*/
+  
+        strncpy_s(name, "Unknown", sizeof(name));
+        age = 0;
+        strncpy_s(email, "Unknown", sizeof(email));
+        strncpy_s(password, "Unknown", sizeof(password));
     }
-
 
     void display_info() {
 
