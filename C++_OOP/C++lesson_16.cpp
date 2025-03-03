@@ -2,10 +2,18 @@
 
 class User
 {
+private:
     char name[20];
     int age;
     char email[50];
     char password[50];
+
+public:
+
+    User() {
+        std::cout << "\n";
+    }
+
 
     void display_info() {
 
@@ -19,7 +27,7 @@ class User
 
 int main()
 {
-    
+    User user;
 
     return 0;
 }
