@@ -19,15 +19,18 @@ public:
         strncpy_s(password, "Unknown", sizeof(password));
     }
 
-    void display_info() {
-
-        std::cout << "Name: " << name;
-        std::cout << "\nAge: " << age;
-        std::cout << "\nEmail: " << email;
-        std::cout << "\nPassword: " << password;
-        std::cout << "\n";
-    }
+    int GetAge() { return age; }
+    void SetAge(int age) { this->age = age; }
 };
+
+void display_info(User user) {
+
+    std::cout << "Name: " << name;
+    std::cout << "\nAge: " << age;
+    std::cout << "\nEmail: " << email;
+    std::cout << "\nPassword: " << password;
+    std::cout << "\n";
+}
 
 int main()
 {
