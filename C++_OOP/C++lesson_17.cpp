@@ -20,6 +20,11 @@ public:
 			_data[i] = other._data[i];
 		}
 	}
+
+	~SuperVector()
+	{
+		delete[] _data;
+	}
 };
 
 int main()
