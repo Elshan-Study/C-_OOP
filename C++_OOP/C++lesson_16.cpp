@@ -81,10 +81,10 @@ void DisplayInfo(const User& user)
         << "\n";
 }
 
-int main()
-{
-    // User user; // call default constructor
-    User user("Aftandil", 40, "biba@gmail.com", "12345678"); // call  constructor with parameters
-    DisplayInfo(user);
-    return 0;
-}
+//int main()
+//{
+//    // User user; // call default constructor
+//    User user("Aftandil", 40, "biba@gmail.com", "12345678"); // call  constructor with parameters
+//    DisplayInfo(user);
+//    return 0;
+//}

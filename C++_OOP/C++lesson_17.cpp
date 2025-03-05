@@ -21,16 +21,40 @@ public:
 		}
 	}
 
+	int Get(size_t index) const
+	{
+		if (index <= _size && index > 0)
+		{
+			return _data[index];
+		}
+
+		return 0;
+	}
+
+	size_t Size() const
+	{
+		return _size;
+	}
+
 	~SuperVector()
 	{
 		delete[] _data;
 	}
 };
 
+void DisplayVector(const SuperVector& vector)
+{
+	for (size_t i = 0; i < vector.Size(); i++)
+	{
+		std::cout << vector.Get(i) << " ";
+	}
+}
+
 int main()
 {
-	SuperVector vector(10);
+	SuperVector vector(50);
 	SuperVector vector2(vector);
+	DisplayVector(vector2);
 
 	return 0;
 }
