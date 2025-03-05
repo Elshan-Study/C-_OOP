@@ -61,11 +61,11 @@ void DisplayVector(const SuperVector& vector)
 	}
 }
 
-int main()
-{
-	SuperVector vector(50);
-	SuperVector vector2(vector);
-	DisplayVector(vector2);
-
-	return 0;
-}
+//int main()
+//{
+//	SuperVector vector(50);
+//	SuperVector vector2(vector);
+//	DisplayVector(vector2);
+//
+//	return 0;
+//}
