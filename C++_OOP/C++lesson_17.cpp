@@ -1,5 +1,16 @@
 #include <iostream>
 
+class Biba
+{
+private:
+	int test;
+public:
+	Biba(int test)
+	{
+		this->test = test;
+	}
+};
+
 class SuperVector
 {
 private:
