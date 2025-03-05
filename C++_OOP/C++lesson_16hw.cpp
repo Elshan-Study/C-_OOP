@@ -5,8 +5,8 @@ class Automobile
 private:
     char _brand[50];
     char _model[50];
-    size_t _year;
-    size_t _mileage;
+    int _year;
+    int _mileage;
          
 public:
     Automobile() 
@@ -17,7 +17,7 @@ public:
         _mileage = 0;
     }
 
-    Automobile(const char* brand, const char* model, const size_t year, const size_t mileage)
+    Automobile(const char* brand, const char* model, const int year, const int mileage)
     {
         setBrand(brand);
         setModel(model);
@@ -27,8 +27,8 @@ public:
 
     const char* getBrand() const { return _brand; }
     const char* getModel() const { return _model; }
-    size_t getYear() const { return _year; }
-    size_t getMileage() const { return _mileage; }
+    int getYear() const { return _year; }
+    int getMileage() const { return _mileage; }
 
 
     void setBrand(const char* newBrand)
@@ -37,6 +37,10 @@ public:
         {
             strncpy_s(_brand, newBrand, sizeof(_brand));
             _brand[strlen(newBrand) - 1] = '\0';
+        }
+        else
+        {
+            strncpy_s(_brand, "Unknown", sizeof(_brand));
         }
     }
 
@@ -47,27 +51,46 @@ public:
             strncpy_s(_model, setModel, sizeof(_model));
             _model[strlen(setModel) - 1] = '\0';
         }
+        else
+        {
+            strncpy_s(_model, "Unknown", sizeof(_model));
+        }
     }
 
-    void setYear(const size_t newYear) 
+    void setYear(const int newYear)
     {
         if (newYear >= 1894)
         {
             _year = newYear;
         }
+        else
+        {
+            _year = 0;
+        }
     }
 
-    void setMileage(const size_t newMileage) /*проверка больше 0 не требуется из-за size_t*/
+    void setMileage(const int newMileage)
     {
-        _mileage = newMileage;
+        if (newMileage > 0)
+        {
+            _mileage = newMileage;
+        }
+        else
+        {
+            _mileage = 0;
+        }
+
     }
 
-    void drive(size_t km)
+    void drive(int km)
     {
-        _mileage += km;
+        if (km > 0)
+        {
+            _mileage += km;
+        }
     }
 
-    int getAge(size_t currentYear)
+    int getAge(int currentYear)
     {
         if (currentYear >= _year)
         {
