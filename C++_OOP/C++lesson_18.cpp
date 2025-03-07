@@ -8,7 +8,7 @@ private:
 	size_t _capacity;
 public:
 	SuperVector() : _data(nullptr), _size(0), _capacity(0) {}
-	SuperVector(size_t size) : _size(size), _capacity(size)
+	explicit SuperVector(size_t size) : _size(size), _capacity(size)
 	{
 		_data = new int[_capacity]();
 	}
@@ -61,13 +61,16 @@ void DisplayVector(const SuperVector& vector)
 
 int main()
 {
-	SuperVector vector(10);
+	/*SuperVector vector(10);
 	std::cout << "Before\n";
 	DisplayVector(vector);
 	SuperVector vector_2 = std::move(vector);
 	std::cout << "After\n";
 	DisplayVector(vector);
-	DisplayVector(vector_2);
+	DisplayVector(vector_2);*/
+
+	SuperVector vector = 5;
+	std::cout << vector.Size() << "\n";
 
 	return 0;
 }
