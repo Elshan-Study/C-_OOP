@@ -115,11 +115,11 @@ int main()
 {
     /*Automobile test;
     DisplayAutomobile(test);*/
-    Automobile automobile1("Mercedes-Benz", "EQB 300", 2022, 69400);
+    /*Automobile automobile1("Mercedes-Benz", "EQB 300", 2022, 69400);
     DisplayAutomobile(automobile1);
     std::cout << "Age: " << automobile1.getAge(2024) << "\n";
     automobile1.drive(500);
-    DisplayAutomobile(automobile1);
+    DisplayAutomobile(automobile1);*/
     
     return 0;
 }

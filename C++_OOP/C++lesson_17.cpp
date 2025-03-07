@@ -34,7 +34,7 @@ public:
 
 	int Get(size_t index) const
 	{
-		if (index <= _size && index > 0)
+		if (index <= _size && index >= 0)
 		{
 			return _data[index];
 		}
