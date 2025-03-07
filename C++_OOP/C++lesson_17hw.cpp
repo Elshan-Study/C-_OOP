@@ -52,7 +52,12 @@ public:
 		_data[_size++] = value;
 	}
 
-	void Set(int value, size_t index) { /*заменяет элемент в массиве по индексу*/
+	void Set(int value, size_t index) { 
+		if (index >= _size)
+		{
+			return;
+		}
+		
 		if (index < _size) {
 			_data[index] = value;
 			return;
@@ -71,6 +76,24 @@ public:
 		_data[index] = value;
 		_size = index + 1;
 	}
+
+	void Insert(int value, size_t index) {
+		if (index >= _size) {
+			return;
+		}
+
+		if (_size >= _capacity) {
+			Resize(2);
+		}
+
+		for (size_t i = _size; i > index; --i) {
+			_data[i] = _data[i - 1];
+		}
+
+		_data[index] = value;
+		_size++;
+	}
+
 
 	void Pop() {
 		if (_size > 0) {
@@ -120,7 +143,7 @@ void DisplayVector(const SuperVector& vector)
 int main()
 {
 	// Проверим работу Set() и PushBack()
-	SuperVector v;
+	SuperVector v(10);
 	v.PushBack(10);
 	v.PushBack(20);
 	v.Set(30, 5);
@@ -132,6 +155,10 @@ int main()
 
 	v.Pop();
 	v.Remove(5);
+	DisplayVector(v);
+	std::cout << std::endl;
+
+	v.Insert(20, 3);
 	DisplayVector(v);
 	std::cout << std::endl;
 
