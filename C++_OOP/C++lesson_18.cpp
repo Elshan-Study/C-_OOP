@@ -24,6 +24,7 @@ public:
 	/*move constructor*/
 	SuperVector(SuperVector&& other) noexcept : _data(other._data), _size(other._size), _capacity(other._capacity)
 	{
+		std::cout << "move constructor" << std::endl;
 		other._data = nullptr;
 		other._size = 0;
 		other._capacity = 0;
@@ -60,5 +61,13 @@ void DisplayVector(const SuperVector& vector)
 
 int main()
 {
+	SuperVector vector(10);
+	std::cout << "Before\n";
+	DisplayVector(vector);
+	SuperVector vector_2 = std::move(vector);
+	std::cout << "After\n";
+	DisplayVector(vector);
+	DisplayVector(vector_2);
+
 	return 0;
 }
