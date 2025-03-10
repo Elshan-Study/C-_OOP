@@ -24,5 +24,14 @@
     <ClCompile Include="C++lesson_16hw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C++lesson_17hw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C++lesson_18.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C++lesson_19.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
