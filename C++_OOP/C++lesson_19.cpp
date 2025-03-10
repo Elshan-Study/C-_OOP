@@ -7,9 +7,9 @@ private:
 	double _y;
 
 public:
-	Point() : _x(0), _y(0) {};
-	Point(double x, double y) : _x(x), _y(y) {};
-	Point(const Point& other) : _x(other._x), _y(other._y) {};
+	Point();
+	Point(double x, double y);
+	Point(const Point& other);
 
 	Point operator+(const Point& other) const;
 
@@ -37,6 +37,10 @@ int main()
 
 	return 0;
 }
+
+Point::Point() : _x(0), _y(0) {};
+Point::Point(double x, double y) : _x(x), _y(y) {};
+Point::Point(const Point& other) : _x(other._x), _y(other._y) {};
 
 Point Point::operator+(const Point& other) const
 {
