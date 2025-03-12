@@ -47,12 +47,12 @@ public:
 	Fraction operator-(const Fraction& other);
 	Fraction operator*(const Fraction& other);
 	Fraction operator/(const Fraction& other);
-	bool operator==(const Fraction& other) const;
-	bool operator!=(const Fraction& other) const;
-	bool operator<(const Fraction& other) const;
-	bool operator>(const Fraction& other) const;
-	bool operator<=(const Fraction& other) const;
-	bool operator>=(const Fraction& other) const;
+	bool operator==(Fraction& other);
+	bool operator!=(Fraction& other);
+	bool operator<(Fraction& other);
+	bool operator>(Fraction& other);
+	bool operator<=(Fraction& other);
+	bool operator>=(Fraction& other);
 	operator double() const;
 };
 

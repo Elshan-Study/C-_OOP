@@ -7,6 +7,7 @@ Fraction::Fraction(int numerator, int denominator)
 	{
 		return;
 	}
+
 }
 
 Fraction::Fraction(const Fraction& other) : _numerator(other._numerator), _denominator(other._denominator) {};
@@ -106,27 +107,31 @@ Fraction Fraction::operator/(const Fraction& other)
 	return Fraction(new_numerator / gcd, new_denominator / gcd);
 }
 
-bool Fraction::operator==(const Fraction& other) const {
+bool Fraction::operator==(Fraction& other)  {
+	Simplify();
+	other.Simplify();
 	return _numerator == other._numerator && _denominator == other._denominator;
 }
 
-bool Fraction::operator!=(const Fraction& other) const {
+bool Fraction::operator!=(Fraction& other)  {
 	return !(*this == other);
 }
 
-bool Fraction::operator<(const Fraction& other) const {
+bool Fraction::operator<(Fraction& other)  {
+	Simplify();
+	other.Simplify();
 	return _numerator * other._denominator < other._numerator * _denominator;
 }
 
-bool Fraction::operator>(const Fraction& other) const {
+bool Fraction::operator>(Fraction& other)  {
 	return other < *this;
 }
 
-bool Fraction::operator<=(const Fraction& other) const {
+bool Fraction::operator<=(Fraction& other)  {
 	return !(other < *this);
 }
 
-bool Fraction::operator>=(const Fraction& other) const {
+bool Fraction::operator>=(Fraction& other)  {
 	return !(*this < other);
 }
 
