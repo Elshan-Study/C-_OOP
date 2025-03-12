@@ -1,5 +1,29 @@
 #include <iostream>
 
+class Biba
+{
+private:
+	int test;
+public:
+	Biba() : test(0){}
+	Biba(int test)
+	{
+		this->test = test;
+	}
+
+	const int get() const
+	{
+		return this->test;
+	}
+
+	friend void display_biba(const Biba& biba);
+};
+
+void display_biba(const Biba& biba)
+{
+	std::cout << "Test: " << biba.test << "\n";
+}
+
 class Point
 {
 private:
