@@ -52,6 +52,8 @@ public:
 	Point& operator--(); /*--point*/
 	Point operator--(int); /*point--*/
 
+	friend std::ostream& operator<<(std::ostream& os, const Point& point);
+	friend std::istream& operator>>(std:: istream& is, Point& point);
 };
 
 int main()
@@ -138,3 +140,14 @@ Point Point::operator--(int)
 	--_y;
 	return temp;
 };
+
+std::ostream& operator<<(std::ostream& os, const Point& point)
+{
+	os << "(" << point._x << ":" << point._y << ")\n";
+}
+
+std::istream& operator>>(std::istream& is, Point& point)
+{
+	is >> point._x >> point._y;
+	return is;
+}
