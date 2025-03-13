@@ -134,16 +134,19 @@
     <ClCompile Include="C++lesson_17hw.cpp" />
     <ClCompile Include="C++lesson_18.cpp" />
     <ClCompile Include="C++lesson_19.cpp" />
+    <ClCompile Include="C++lesson_19hw.cpp" />
     <ClCompile Include="C++lesson_20.cpp" />
     <ClCompile Include="C++lesson_20_practice.cpp" />
     <ClCompile Include="Customer.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="C++lesson_18hw.cpp" />
+    <ClCompile Include="SuperVector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Fraction.h" />
+    <ClInclude Include="SuperVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

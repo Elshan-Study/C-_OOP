@@ -85,9 +85,9 @@ void menu(Customer& customer)
     } while (choice != 0);
 }
 
-int main()
-{
-    Customer customer("Alice", "Smith", 1000);
-    menu(customer);
-    return 0;
-}
+//int main()
+//{
+//    Customer customer("Alice", "Smith", 1000);
+//    menu(customer);
+//    return 0;
+//}
