@@ -42,9 +42,24 @@
     <ClCompile Include="Fraction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C++lesson_18hw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BankAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Customer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BankAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Customer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
