@@ -134,7 +134,7 @@
     <ClCompile Include="C++lesson_17hw.cpp" />
     <ClCompile Include="C++lesson_18.cpp" />
     <ClCompile Include="C++lesson_19.cpp" />
-    <ClCompile Include="C++lesson_19hw.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="C++lesson_20.cpp" />
     <ClCompile Include="C++lesson_20_practice.cpp" />
     <ClCompile Include="Customer.cpp" />

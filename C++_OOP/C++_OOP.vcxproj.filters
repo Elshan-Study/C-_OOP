@@ -54,7 +54,7 @@
     <ClCompile Include="SuperVector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C++lesson_19hw.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
