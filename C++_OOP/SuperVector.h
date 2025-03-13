@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+
 class SuperVector
 {
 private:
@@ -42,4 +44,18 @@ public:
 	const int& operator[](size_t index) const;
 
 	/*homework 20*/
+	void operator+=(const SuperVector& other);
+	void operator+=(int value);
+	void operator-=(const SuperVector& other);
+	void operator-=(int value);
+	void operator*=(const SuperVector& other);
+	void operator*=(int value);
+	void operator/=(const SuperVector& other);
+	void operator/=(int value);
+	SuperVector& operator++();
+	SuperVector operator++(int);
+	SuperVector& operator--();
+	SuperVector operator--(int);
+	friend std::ostream& operator<<(std::ostream& os, const SuperVector& vector);
+	friend std::istream& operator>>(std:: istream& is, SuperVector& vector);
 };

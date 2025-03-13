@@ -1,4 +1,5 @@
 #include "SuperVector.h"
+#include <iostream>
 
 SuperVector::SuperVector() : _data(nullptr), _size(0), _capacity(0){}
 SuperVector::SuperVector(size_t size) : _size(size), _capacity(size)
@@ -111,44 +112,62 @@ SuperVector::~SuperVector()
 }
 
 /*homework 19*/
-SuperVector SuperVector::operator+(const SuperVector& other)
-{
-	for (size_t i = 0; i < _size; i++)
-	{
-		_data[i] += other._data[i];
+SuperVector SuperVector::operator+(const SuperVector& other) {
+	size_t newSize = _size >= other._size ? _size : other._size;
+	SuperVector newVector(newSize);
+
+	for (size_t i = 0; i < newSize; i++) {
+		int val1 = (i < _size) ? _data[i] : 0;
+		int val2 = (i < other._size) ? other._data[i] : 0;
+		newVector[i] = val1 + val2;
 	}
-	return *this;
+
+	return newVector;
 }
 
-SuperVector SuperVector::operator-(const SuperVector& other)
-{
-	for (size_t i = 0; i < _size; i++)
-	{
-		_data[i] -= other._data[i];
+SuperVector SuperVector::operator-(const SuperVector& other) {
+	size_t newSize = _size >= other._size ? _size : other._size;
+	SuperVector newVector(newSize);
+
+	for (size_t i = 0; i < newSize; i++) {
+		int val1 = (i < _size) ? _data[i] : 0;
+		int val2 = (i < other._size) ? other._data[i] : 0;
+		newVector[i] = val1 - val2;
 	}
-	return *this;
+
+	return newVector;
 }
 
-SuperVector SuperVector::operator*(const SuperVector& other)
-{
-	for (size_t i = 0; i < _size; i++)
-	{
-		_data[i] *= other._data[i];
+SuperVector SuperVector::operator*(const SuperVector& other) {
+	size_t newSize = _size >= other._size ? _size : other._size;
+	SuperVector newVector(newSize);
+
+	for (size_t i = 0; i < newSize; i++) {
+		int val1 = (i < _size) ? _data[i] : 0;
+		int val2 = (i < other._size) ? other._data[i] : 0;
+		newVector[i] = val1 * val2;
 	}
-	return *this;
+
+	return newVector;
 }
 
-SuperVector SuperVector::operator/(const SuperVector& other)
-{
-	for (size_t i = 0; i < _size; i++)
-	{
-		if (other._data[i] == 0)
+SuperVector SuperVector::operator/(const SuperVector& other) {
+	size_t newSize = _size >= other._size ? _size : other._size;
+	SuperVector newVector(newSize);
+
+	for (size_t i = 0; i < newSize; i++) {
+		int val1 = (i < _size) ? _data[i] : 0;
+		int val2 = (i < other._size) ? other._data[i] : 0;
+		if (val2 == 0)
 		{
-			return *this;
+			newVector[i] = val1;
+			continue;
 		}
-		_data[i] /= other._data[i];
+
+		newVector[i] = val1 / val2;
 	}
-	return *this;
+
+	return newVector;
 }
 
 int& SuperVector::operator[](size_t index)
@@ -162,3 +181,136 @@ const int& SuperVector::operator[](size_t index) const
 }
 
 /*homework 20*/
+void SuperVector::operator+=(const SuperVector& other)
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		_data[i] += other._data[i];
+	}
+	return;
+}
+
+void SuperVector::operator+=(int value)
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		_data[i] += value;
+	}
+
+	return;
+}
+
+void SuperVector::operator-=(const SuperVector& other)
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		_data[i] -= other._data[i];
+	}
+	return;
+}
+
+void SuperVector::operator-=(int value)
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		_data[i] -= value;
+	}
+	return;
+}
+
+void SuperVector::operator*=(const SuperVector& other)
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		_data[i] *= other._data[i];
+	}
+	return;
+}
+
+void SuperVector::operator*=(int value)
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		_data[i] *= value;
+	}
+	return;
+}
+
+void SuperVector::operator/=(const SuperVector& other)
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		if (other._data[i] == 0)
+		{
+			return;
+		}
+		_data[i] /= other._data[i];
+	}
+	return;
+}
+
+void SuperVector::operator/=(int value)
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		if (value == 0)
+		{
+			return;
+		}
+		_data[i] /= value;
+	}
+	return;
+}
+
+SuperVector& SuperVector::operator++()
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		++_data[i];
+	}
+	return *this;
+}
+
+SuperVector SuperVector::operator++(int)
+{
+	SuperVector temp = *this;
+	++(*this); 
+	return temp; 
+}
+
+SuperVector& SuperVector::operator--()
+{
+	for (size_t i = 0; i < _size; i++)
+	{
+		--_data[i];
+	}
+	return *this;
+}
+
+SuperVector SuperVector::operator--(int)
+{
+	SuperVector temp = *this; 
+	--(*this); 
+	return temp; 
+}
+
+std::ostream& operator<<(std::ostream& os, const SuperVector& vector)
+{
+	for (size_t i = 0; i < vector.Size(); i++)
+	{
+		os << vector[i] << " ";
+	}
+	os << "\n";
+	return os;
+}
+
+std::istream& operator>>(std::istream& is, SuperVector& vector)
+{
+
+	for (size_t i = 0; i < vector.Size(); i++)
+	{
+		is >> vector[i];
+	}
+
+	return is;
+}

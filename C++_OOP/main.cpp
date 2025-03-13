@@ -27,6 +27,17 @@ int main()
 	std::cout << std::endl;*/
 
 
+	SuperVector v1(3);
+	SuperVector v2(4);
+
+	std::cout << "Vector 1: \n";
+	std::cin >> v1; 
+	std::cout << v1;
+	/*std::cout << "Vector 2: \n";
+	std::cin >> v2;
+	std::cout << v2;*/
+	std::cout << v1--;
+	std::cout << v1;
 
 	return 0;
 }
