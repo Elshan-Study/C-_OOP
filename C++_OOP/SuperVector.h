@@ -41,7 +41,7 @@ public:
 	SuperVector operator*(const SuperVector& other);
 	SuperVector operator/(const SuperVector& other);
 	int& operator[](size_t index);
-	const int& operator[](size_t index) const;
+	const int operator[](size_t index) const;
 
 	/*homework 20*/
 	void operator+=(const SuperVector& other);

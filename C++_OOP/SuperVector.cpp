@@ -115,10 +115,11 @@ SuperVector::~SuperVector()
 SuperVector SuperVector::operator+(const SuperVector& other) {
 	size_t newSize = _size >= other._size ? _size : other._size;
 	SuperVector newVector(newSize);
-
+	
+	int val1, val2;
 	for (size_t i = 0; i < newSize; i++) {
-		int val1 = (i < _size) ? _data[i] : 0;
-		int val2 = (i < other._size) ? other._data[i] : 0;
+		val1 = (i < _size) ? _data[i] : 0;
+		val2 = (i < other._size) ? other._data[i] : 0;
 		newVector[i] = val1 + val2;
 	}
 
@@ -129,9 +130,10 @@ SuperVector SuperVector::operator-(const SuperVector& other) {
 	size_t newSize = _size >= other._size ? _size : other._size;
 	SuperVector newVector(newSize);
 
+	int val1, val2;
 	for (size_t i = 0; i < newSize; i++) {
-		int val1 = (i < _size) ? _data[i] : 0;
-		int val2 = (i < other._size) ? other._data[i] : 0;
+		val1 = (i < _size) ? _data[i] : 0;
+		val2 = (i < other._size) ? other._data[i] : 0;
 		newVector[i] = val1 - val2;
 	}
 
@@ -142,9 +144,10 @@ SuperVector SuperVector::operator*(const SuperVector& other) {
 	size_t newSize = _size >= other._size ? _size : other._size;
 	SuperVector newVector(newSize);
 
+	int val1, val2;
 	for (size_t i = 0; i < newSize; i++) {
-		int val1 = (i < _size) ? _data[i] : 0;
-		int val2 = (i < other._size) ? other._data[i] : 0;
+		val1 = (i < _size) ? _data[i] : 0;
+		val2 = (i < other._size) ? other._data[i] : 0;
 		newVector[i] = val1 * val2;
 	}
 
@@ -155,9 +158,10 @@ SuperVector SuperVector::operator/(const SuperVector& other) {
 	size_t newSize = _size >= other._size ? _size : other._size;
 	SuperVector newVector(newSize);
 
+	int val1, val2;
 	for (size_t i = 0; i < newSize; i++) {
-		int val1 = (i < _size) ? _data[i] : 0;
-		int val2 = (i < other._size) ? other._data[i] : 0;
+		val1 = (i < _size) ? _data[i] : 0;
+		val2 = (i < other._size) ? other._data[i] : 0;
 		if (val2 == 0)
 		{
 			newVector[i] = val1;
@@ -172,11 +176,19 @@ SuperVector SuperVector::operator/(const SuperVector& other) {
 
 int& SuperVector::operator[](size_t index)
 {
+	if(index >= 0 && index <= Size())
+	{
+		return _data[0];
+	}
 	return _data[index];
 }
 
-const int& SuperVector::operator[](size_t index) const
+const int SuperVector::operator[](size_t index) const
 {
+	if(index >= 0 && index <= Size())
+	{
+		return _data[0];
+	}
 	return _data[index];
 }
 
