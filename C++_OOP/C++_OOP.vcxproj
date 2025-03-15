@@ -128,13 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BankAccount.cpp" />
-    <ClCompile Include="C++lesson21.cpp" />
+    <ClCompile Include="C++lesson_21.cpp" />
     <ClCompile Include="C++lesson_16.cpp" />
     <ClCompile Include="C++lesson_16hw.cpp" />
     <ClCompile Include="C++lesson_17.cpp" />
     <ClCompile Include="C++lesson_17hw.cpp" />
     <ClCompile Include="C++lesson_18.cpp" />
     <ClCompile Include="C++lesson_19.cpp" />
+    <ClCompile Include="C++lesson_22.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="C++lesson_20.cpp" />
     <ClCompile Include="C++lesson_20_practice.cpp" />

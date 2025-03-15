@@ -127,26 +127,26 @@ public:
 };
 
 
-int main()
-{
-    // Biba biba;
-    // Boba boba;
-    // //boba.Foo();
-    // boba.Test();
-    // Baba baba;
-    // baba.Test();
-    //
-
-    // A a;
-    // B b;
-    // C c;
-    // D d;
-
-    // a.foo();
-    // b.foo();
-    // c.foo();
-    // d.foo();
-
-    //Teacher t("Test", 54, "test");
-    return 0;
-}
+//int main()
+//{
+//    // Biba biba;
+//    // Boba boba;
+//    // //boba.Foo();
+//    // boba.Test();
+//    // Baba baba;
+//    // baba.Test();
+//    //
+//
+//    // A a;
+//    // B b;
+//    // C c;
+//    // D d;
+//
+//    // a.foo();
+//    // b.foo();
+//    // c.foo();
+//    // d.foo();
+//
+//    //Teacher t("Test", 54, "test");
+//    return 0;
+//}
