@@ -23,6 +23,7 @@ private:
 
 public:
 	SuperVector();
+	SuperVector(std::initializer_list<int> init_list);
 	SuperVector(size_t size);
 	SuperVector(const SuperVector& other);
 

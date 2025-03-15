@@ -6,6 +6,17 @@ SuperVector::SuperVector(size_t size) : _size(size), _capacity(size)
 {
 	_data = new int[_capacity]();
 }
+
+SuperVector::SuperVector(std::initializer_list<int> init_list) : _size(init_list.size()), _capacity(init_list.size())
+{
+	_data = new int[_capacity];
+	size_t index = 0;
+
+	for (auto value : init_list)
+	{
+		_data[index++] = value;
+	}
+}
 SuperVector::SuperVector(const SuperVector& other) : _size(other._size), _capacity(other._capacity)
 {
 	_data = new int[_capacity];
