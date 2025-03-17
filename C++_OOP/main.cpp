@@ -40,9 +40,13 @@ int main()
 	//std::cout << v1--;
 	//std::cout << v1;
 
-	Animal bird("Bird", 15, 3.5);
+	Mammal mammal("Lion", 23, 30, 1);
+	Bird bird("Sparrow", 3, 0.3, 23);
+	Reptile reptile("Crocodile", 32, 22, 0);
 
+	std::cout << mammal;
 	std::cout << bird;
+	std::cout << reptile;
 
 
 	return 0;
