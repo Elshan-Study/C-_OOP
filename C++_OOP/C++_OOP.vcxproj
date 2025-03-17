@@ -144,6 +144,7 @@
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="C++lesson_18hw.cpp" />
     <ClCompile Include="SuperVector.cpp" />
+    <ClCompile Include="Zoo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="SuperVector.h" />
+    <ClInclude Include="Zoo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -66,6 +66,9 @@
     <ClCompile Include="Animal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Zoo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fraction.h">
@@ -81,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Animal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Zoo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
