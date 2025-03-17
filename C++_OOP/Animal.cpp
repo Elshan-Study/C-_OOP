@@ -17,7 +17,7 @@ Animal::Animal(const char* name, int age, double weight)
 Animal::Animal(const Animal& other) : _age(other._age), _weight(other._weight)
 {
 	_name = nullptr;
-	copyString(_name, other._name);
+	copyString(_name, other._name, 20);
 }
 
 Animal::Animal(Animal&& other) noexcept : _name(other._name), _age(other._age), _weight(other._weight)
@@ -33,7 +33,7 @@ Animal::~Animal(){
 	_weight = 0;
 }
 
-void Animal::setName(const char* name) { copyString(_name, name); }
+void Animal::setName(const char* name) { copyString(_name, name, 20); }
 void Animal::setAge(int age) { _age = age; }
 void Animal::setWeight(double weight) { _weight = weight; }
 char* Animal::getName() { return _name; }

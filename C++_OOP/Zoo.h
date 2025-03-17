@@ -1,9 +1,6 @@
 #pragma once
 #include <string.h>
-class Zoo
-{
-};
-
+#include "Animal.h"
 
 class ZooWorker
 {
@@ -11,20 +8,7 @@ private:
 	char* _name;
 	int _experience;
 
-	void copyString(char*& dest, const char* src)
-	{
-		delete[] dest;
-		if (src)
-		{
-			dest = new char[strlen(src) + 1];
-			strcpy_s(dest, strlen(src) + 1, src);
-		}
-		else
-		{
-			dest = new char[30];
-			strcpy_s(dest, 30, "Unknown");
-		}
-	}
+    void copyString(char*& dest, const char* src, int size);
 public:
 	ZooWorker();
 	explicit ZooWorker(const char* name, int experience);
@@ -38,3 +22,35 @@ public:
 	int getExperience();
 };
 
+class Enclosure
+{
+private:
+    char* _type;
+    int _capacity;
+    Animal** _animals;
+    int _animalCount;
+    ZooWorker _caretaker;
+
+    void copyString(char*& dest, const char* src);
+    void copyAnimals(Animal**& dest, Animal** src, int count);
+
+public:
+    Enclosure();
+    explicit Enclosure(const char* type, int capacity, const ZooWorker& caretaker);
+
+    Enclosure(const Enclosure& other);
+
+    Enclosure(Enclosure&& other) noexcept;
+
+    ~Enclosure();
+
+    void setType(const char* type);
+
+    void addAnimal(Animal* animal);
+
+	void removeAnimal(int index);
+
+
+    void printEnclosureInfo();
+
+};

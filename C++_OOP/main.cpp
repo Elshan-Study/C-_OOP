@@ -1,6 +1,7 @@
 #include <iostream>
 #include "SuperVector.h"
 #include "Animal.h"
+#include "Zoo.h"
 
 void DisplayVector(const SuperVector& vector)
 {
@@ -40,14 +41,18 @@ int main()
 	//std::cout << v1--;
 	//std::cout << v1;
 
-	Mammal mammal("Lion", 23, 30, 1);
-	Bird bird("Sparrow", 3, 0.3, 23);
-	Reptile reptile("Crocodile", 32, 22, 0);
 
-	std::cout << mammal;
-	std::cout << bird;
-	std::cout << reptile;
+	ZooWorker caretaker("John Doe", 5);
+	Enclosure enclosure("Savannah", 3, caretaker);
+	Mammal* animal_1 = new Mammal("Lion", 5, 150.0, 1);
+	Mammal* animal_2 = new Mammal("Elephant", 10, 500.0, 0);
+	Reptile* animal_3 = new Reptile("Crocodile", 10, 100.0, 0);
+	enclosure.addAnimal(animal_1);
+	enclosure.addAnimal(animal_2);
+	enclosure.addAnimal(animal_3);
+	enclosure.printEnclosureInfo();
 
-
+	enclosure.removeAnimal(0);
+	enclosure.printEnclosureInfo();
 	return 0;
 }

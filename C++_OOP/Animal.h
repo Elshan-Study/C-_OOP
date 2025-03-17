@@ -1,6 +1,7 @@
 #pragma once
 #include <string.h>
 #include <iostream>
+
 class Animal
 {
 private:
@@ -8,7 +9,7 @@ private:
 	int _age;
 	double _weight;
 
-	void copyString(char*& dest, const char* src)
+	void copyString(char*& dest, const char* src, int size)
 	{
 		delete[] dest;
 		if (src)
@@ -18,10 +19,11 @@ private:
 		}
 		else
 		{
-			dest = new char[20];
-			strcpy_s(dest, 20, "Unknown");
+			dest = new char[size];
+			strcpy_s(dest, size, "Unknown");
 		}
 	}
+
 public:
 	Animal();
 
