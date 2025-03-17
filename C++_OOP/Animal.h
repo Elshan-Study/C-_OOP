@@ -37,9 +37,9 @@ public:
 	void setName(const char* name);
 	void setAge(int age);
 	void setWeight(double weight);
-	char* getName();
-	int getAge();
-	double getWeight();
+	char* getName() const;
+	int getAge() const;
+	double getWeight() const;
 
 	friend std::ostream& operator<<(std::ostream& os, const Animal& animal);
 };
@@ -56,7 +56,7 @@ public:
 	~Mammal();
 
 	void setFur(bool hasFur);
-	bool getFur();
+	bool getFur() const;
 };
 
 class Bird : public Animal
@@ -71,7 +71,7 @@ public:
 	~Bird();
 
 	void setWingSpan(double wingSpan);
-	bool getWingSpan();
+	bool getWingSpan() const;
 };
 
 class Reptile : public Animal
@@ -86,7 +86,7 @@ public:
 	~Reptile();
 
 	void setVenomous(bool isVenomous);
-	bool getVenomous();
+	bool getVenomous() const;
 };
 
 

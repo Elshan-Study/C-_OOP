@@ -28,7 +28,7 @@ int main()
 	DisplayVector(v3);
 	std::cout << std::endl;*/
 
-
+	/*homework 20*/
 	//SuperVector v1(3);
 	//SuperVector v2(4);
 
@@ -41,7 +41,7 @@ int main()
 	//std::cout << v1--;
 	//std::cout << v1;
 
-
+	/*homework 21*/
 	ZooWorker caretaker("John Doe", 5);
 	Enclosure enclosure("Savannah", 3, caretaker);
 	Mammal* animal_1 = new Mammal("Lion", 5, 150.0, 1);
@@ -50,9 +50,15 @@ int main()
 	enclosure.addAnimal(animal_1);
 	enclosure.addAnimal(animal_2);
 	enclosure.addAnimal(animal_3);
-	enclosure.printEnclosureInfo();
+
+	//std::cout << enclosure;
+	/*enclosure.printEnclosureInfo();
 
 	enclosure.removeAnimal(0);
-	enclosure.printEnclosureInfo();
+	enclosure.printEnclosureInfo();*/
+
+	Zoo zoo;
+	zoo.addEnclosure(enclosure);
+	std::cout << zoo;
 	return 0;
 }

@@ -36,9 +36,9 @@ Animal::~Animal(){
 void Animal::setName(const char* name) { copyString(_name, name, 20); }
 void Animal::setAge(int age) { _age = age; }
 void Animal::setWeight(double weight) { _weight = weight; }
-char* Animal::getName() { return _name; }
-int Animal::getAge() { return _age; }
-double Animal::getWeight() { return _weight; }
+char* Animal::getName() const { return _name; }
+int Animal::getAge() const { return _age; }
+double Animal::getWeight() const { return _weight; }
 
 std::ostream& operator<<(std::ostream& os, const Animal& animal)
 {
@@ -57,7 +57,7 @@ Mammal::Mammal(Mammal&& other) noexcept : Animal(std::move(other)), _hasFur(othe
 Mammal::~Mammal() { _hasFur = 0; }
 
 void Mammal::setFur(bool hasFur) { _hasFur = hasFur; }
-bool Mammal::getFur() { return _hasFur; }
+bool Mammal::getFur() const { return _hasFur; }
 
 Bird::Bird() : _wingSpan(0) {};
 Bird::Bird(const char* name, int age, double weight, double wingSpan) : Animal(name, age, weight) { setWingSpan(wingSpan); };
@@ -68,7 +68,7 @@ Bird::Bird(Bird&& other) noexcept : Animal(std::move(other)), _wingSpan(other._w
 Bird::~Bird() { _wingSpan = 0; }
 
 void Bird::setWingSpan(double wingSpan) { _wingSpan = wingSpan; }
-bool Bird::getWingSpan() { return _wingSpan; }
+bool Bird::getWingSpan() const { return _wingSpan; }
 
 Reptile::Reptile() : _isVenomous(0) {};
 Reptile::Reptile(const char* name, int age, double weight, bool isVenomous) : Animal(name, age, weight) { setVenomous(isVenomous); };
@@ -79,4 +79,4 @@ Reptile::Reptile(Reptile&& other) noexcept : Animal(std::move(other)), _isVenomo
 Reptile::~Reptile() { _isVenomous = 0; }
 
 void Reptile::setVenomous(bool isVenomous) { _isVenomous = isVenomous; }
-bool Reptile::getVenomous() { return _isVenomous; }
+bool Reptile::getVenomous() const { return _isVenomous; }

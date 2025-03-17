@@ -48,8 +48,16 @@ ZooWorker::~ZooWorker() {
 
 void ZooWorker::setName(const char* name) { copyString(_name, name, 30); }
 void ZooWorker::setExperience(int experience) { _experience = experience; }
-char* ZooWorker::getName() { return _name; }
-int ZooWorker::getExperience() { return _experience; }
+char* ZooWorker::getName() const { return _name; }
+int ZooWorker::getExperience() const { return _experience; }
+
+ZooWorker& ZooWorker::operator=(const ZooWorker& zooWorker)
+{
+    copyString(_name, zooWorker._name, 30);
+    _experience = zooWorker._experience;
+
+    return *this;
+}
 
 void Enclosure::copyString(char*& dest, const char* src)
 {
@@ -106,9 +114,6 @@ Enclosure::Enclosure(Enclosure&& other) noexcept
 Enclosure::~Enclosure()
 {
     delete[] _type;
-    for (int i = 0; i < _animalCount; ++i) {
-        delete _animals[i];
-    }
     delete[] _animals;
 }
 
@@ -122,6 +127,7 @@ void Enclosure::addAnimal(Animal* animal)
     if (!animal || _animalCount >= _capacity || !_animals) {
         return;
     }
+
     _animals[_animalCount++] = animal;
 }
 
@@ -138,14 +144,88 @@ void Enclosure::removeAnimal(int index)
     _animalCount--;
 }
 
-void Enclosure::printEnclosureInfo()
+std::ostream& operator<<(std::ostream& os, const Enclosure& enclosure)
 {
-    std::cout << "Enclosure Type: " << _type << "\n";
-    std::cout << "Caretaker: " << _caretaker.getName() << "\n";
-    std::cout << "Animals: " << "\n";
-    for (int i = 0; i < _animalCount; i++)
+    os << "Enclosure Type: " << enclosure._type << "\n";
+    os << "Caretaker: " << enclosure._caretaker.getName() << "\n";
+    os << "Animals: " << "\n";
+    for (int i = 0; i < enclosure._animalCount; i++)
     {
-        std::cout << i + 1 << "\n";
-        std::cout << *_animals[i] << "\n";
+        os << i + 1 << "\n";
+        os << *enclosure._animals[i] << "\n";
     }
+    return os;
+}
+
+Enclosure& Enclosure::operator=(const Enclosure& enclosure)
+{
+    if (this == &enclosure)  
+        return *this;
+
+    delete[] _type;
+    delete[] _animals;
+
+    _type = nullptr;
+    _animals = nullptr;
+
+    copyString(_type, enclosure._type);
+    copyAnimals(_animals, enclosure._animals, enclosure._animalCount);
+    _capacity = enclosure._capacity;
+    _animalCount = enclosure._animalCount;
+    _caretaker = enclosure._caretaker;
+
+    return *this;
+}
+
+
+Zoo::Zoo() : _enclosureCount(0), _capacity(5)
+{
+    _enclosures = new Enclosure[_capacity];
+}
+
+Zoo::Zoo(int capacity) : _enclosureCount(0), _capacity(capacity)
+{
+    _enclosures = new Enclosure[capacity];
+}
+
+Zoo::Zoo(const Zoo& other) : _enclosureCount(other._enclosureCount), _capacity(other._capacity)
+{
+    _enclosures = new Enclosure[other._capacity];
+    for (size_t i = 0; i < other._enclosureCount; i++)
+    {
+        _enclosures[i] = other._enclosures[i];
+    }
+}
+
+Zoo::Zoo(Zoo&& other) noexcept : _enclosureCount(other._enclosureCount), _enclosures(other._enclosures), _capacity(other._capacity)
+{
+    other._enclosures = nullptr;
+    other._enclosureCount = 0;
+    other._capacity = 0;
+}
+
+Zoo::~Zoo() {
+    _enclosureCount = 0;
+    _capacity = 0;
+    delete[] _enclosures;
+}
+
+void Zoo::addEnclosure(const Enclosure& enclosure)
+{
+    if (_enclosureCount >= _capacity || !_enclosures) {
+        return;
+    }
+    _enclosures[_enclosureCount++] = enclosure;
+}
+
+std::ostream& operator<<(std::ostream& os, const Zoo& zoo)
+{
+    os << "Zoo Info:\n";
+    for (int i = 0; i < zoo._enclosureCount; i++)
+    {
+        os << zoo._enclosures[i] << "\n";
+        os << "_____________________\n";
+    }
+
+    return os;
 }

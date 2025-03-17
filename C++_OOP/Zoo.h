@@ -5,21 +5,23 @@
 class ZooWorker
 {
 private:
-	char* _name;
-	int _experience;
+    char* _name;
+    int _experience;
 
     void copyString(char*& dest, const char* src, int size);
 public:
-	ZooWorker();
-	explicit ZooWorker(const char* name, int experience);
-	ZooWorker(const ZooWorker& other);
-	ZooWorker(ZooWorker&& other) noexcept;
-	~ZooWorker();
+    ZooWorker();
+    explicit ZooWorker(const char* name, int experience);
+    ZooWorker(const ZooWorker& other);
+    ZooWorker(ZooWorker&& other) noexcept;
+    ~ZooWorker();
 
-	void setName(const char* name);
-	void setExperience(int experience);
-	char* getName();
-	int getExperience();
+    void setName(const char* name);
+    void setExperience(int experience);
+    char* getName() const;
+    int getExperience() const;
+
+    ZooWorker& operator=(const ZooWorker& zooWorker);
 };
 
 class Enclosure
@@ -50,7 +52,29 @@ public:
 
 	void removeAnimal(int index);
 
+    friend std::ostream& operator<<(std::ostream& os, const Enclosure& enclosure);
 
-    void printEnclosureInfo();
+    Enclosure& operator=(const Enclosure& enclosure);
+};
+
+class Zoo
+{
+private:
+    Enclosure* _enclosures;
+    int _enclosureCount;
+    int _capacity;
+public:
+    Zoo();
+
+    Zoo(int capacity);
+    Zoo(const Zoo& other);
+
+    Zoo(Zoo&& other) noexcept;
+    ~Zoo();
+    void addEnclosure(const Enclosure& enclosure);
+
+    friend std::ostream& operator<<(std::ostream& os, const Zoo& zoo);
+
+
 
 };
