@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
     <ClCompile Include="BankAccount.cpp" />
     <ClCompile Include="C++lesson_21.cpp" />
     <ClCompile Include="C++lesson_16.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="SuperVector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Fraction.h" />
