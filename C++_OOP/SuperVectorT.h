@@ -55,7 +55,7 @@ public:
 			return _data[index];
 		}
 
-		return 0;
+		return T();
 	}
 
 	void PushBack(T value) {
@@ -207,7 +207,7 @@ public:
 	}
 
 	T& operator[](size_t index) {
-		if (index <= 0 || index >= Size())
+		if (index >= Size())
 		{
 			return _data[0];
 		}
@@ -216,7 +216,7 @@ public:
 
 	const T operator[](size_t index) const
 	{
-		if (index <= 0 || index >= Size())
+		if (index >= Size())
 		{
 			return _data[0];
 		}

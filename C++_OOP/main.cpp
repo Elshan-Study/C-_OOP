@@ -64,8 +64,9 @@ int main()
 
 	/*homework 22*/
 
-	SuperVectorT <double> vectorT({ 5, 6.8, .7 });
-	std::cout << vectorT[2];
+	SuperVectorT <double> vectorT({ 'a', '6', '7' });
+	SuperVectorT <double> vectorT2({ 5, 6.8, 0 });
+	std::cout << vectorT / vectorT2;
 
 
 	return 0;
