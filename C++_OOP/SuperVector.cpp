@@ -187,7 +187,7 @@ SuperVector SuperVector::operator/(const SuperVector& other) {
 
 int& SuperVector::operator[](size_t index)
 {
-	if(index >= 0 && index <= Size())
+	if(index <= 0 || index >= Size())
 	{
 		return _data[0];
 	}
@@ -196,7 +196,7 @@ int& SuperVector::operator[](size_t index)
 
 const int SuperVector::operator[](size_t index) const
 {
-	if(index >= 0 && index <= Size())
+	if(index <= 0 || index >= Size())
 	{
 		return _data[0];
 	}
