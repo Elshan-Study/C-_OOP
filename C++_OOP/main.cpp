@@ -64,10 +64,15 @@ int main()
 
 	/*homework 22*/
 
-	SuperVectorT <double> vectorT({ 'a', '6', '7' });
-	SuperVectorT <double> vectorT2({ 5, 6.8, 0 });
-	std::cout << vectorT / vectorT2;
+	SuperVectorT <double> vectorT({ 11, 66, 55 });
+	SuperVectorT <double> vectorT2({ 5, 6.8, 45 });
 
+	SuperVectorT <double> vectorT3 = vectorT + vectorT2;
+	std::cout << vectorT3[5] << "\n";
+
+	vectorT += vectorT3;
+
+	std::cout << vectorT.Size();
 
 	return 0;
 }

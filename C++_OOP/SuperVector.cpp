@@ -19,11 +19,14 @@ SuperVector::SuperVector(std::initializer_list<int> init_list) : _size(init_list
 }
 SuperVector::SuperVector(const SuperVector& other) : _size(other._size), _capacity(other._capacity)
 {
-	_data = new int[_capacity];
+	int* temp = new int[_capacity];
 	for (size_t i = 0; i < _size; i++)
 	{
-		_data[i] = other._data[i];
+		temp[i] = other._data[i];
 	}
+
+	delete[] _data;
+	_data = temp;
 }
 
 int SuperVector::Get(size_t index) const

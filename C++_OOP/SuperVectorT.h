@@ -41,11 +41,14 @@ public:
 	}
 	SuperVectorT(const SuperVectorT& other) : _size(other._size), _capacity(other._capacity)
 	{
-		_data = new T[_capacity];
+		T* temp = new T[_capacity];
 		for (size_t i = 0; i < _size; i++)
 		{
-			_data[i] = other._data[i];
+			temp[i] = other._data[i];
 		}
+
+		delete[] _data;
+		_data = temp;
 	};
 
 	T Get(size_t index) const
@@ -145,16 +148,19 @@ public:
 	}
 
 	SuperVectorT operator+(const SuperVectorT& other) {
-		size_t newSize = _size >= other._size ? _size : other._size;
+		size_t newSize = _size + other._size;
 		SuperVectorT newVector(newSize);
 
-		T val1, val2;
-		for (size_t i = 0; i < newSize; i++) {
-			val1 = (i < _size) ? _data[i] : 0;
-			val2 = (i < other._size) ? other._data[i] : 0;
-			newVector[i] = val1 + val2;
+		for (size_t i = 0; i < _size; i++) {
+			newVector[i] = _data[i];
 		}
 
+		for (size_t i = _size; i < newSize; i++) {
+			for (size_t j = 0; j < other._size; j++)
+			{
+				newVector[i] = other._data[j];
+			}
+		}
 		return newVector;
 	}
 
@@ -175,25 +181,42 @@ public:
 		return _data[index];
 	}
 
+	SuperVectorT& operator=(const SuperVectorT& vector)
+	{
+		_size = vector._size;
+		_capacity = vector._capacity;
+		
+		T* temp = new T[_capacity];
+		for (size_t i = 0; i < _size; i++)
+		{
+			temp[i] = vector._data[i];
+		}
+
+		delete[] _data;
+		_data = temp;
+		return *this;
+	}
+
 	void operator+=(const SuperVectorT& other)
 	{
-		for (size_t i = 0; i < _size; i++)
-		{
-			_data[i] += other._data[i];
-		}
-		return;
-	}
+		size_t newSize = _size + other._size;
+		SuperVectorT tempVector(newSize);
 
-	void operator+=(T value)
-	{
-		for (size_t i = 0; i < _size; i++)
-		{
-			_data[i] += value;
+		for (size_t i = 0; i < _size; i++) {
+			tempVector[i] = _data[i];
 		}
 
+		for (size_t i = _size; i < newSize; i++) {
+			for (size_t j = 0; j < other._size; j++)
+			{
+				tempVector[i] = other._data[j];
+			}
+		}
+
+		*this = tempVector;
+
 		return;
 	}
-
 
 };
 
