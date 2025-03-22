@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-size_t global_ref_count = 0;
+static size_t globalRefCount = 0; /*я посмотрел, что без статики это работать не будет*/
 
 template<typename T>
 class SharedPtr
@@ -12,7 +12,7 @@ private:
     void release()
     {
         if (ptr) {
-            if (--global_ref_count == 0) {
+            if (--globalRefCount == 0) {
                 if (is_array) {
                     delete[] ptr;
                 }
@@ -26,14 +26,15 @@ private:
     }
 
 public:
-    SharedPtr() : ptr(nullptr), is_array(false) { ++global_ref_count; }
+    bool test();
+    SharedPtr() : ptr(nullptr), is_array(false) { ++globalRefCount; }
 
-    explicit SharedPtr(T* p, bool array = false) : ptr(p), is_array(array) { ++global_ref_count; }
+    explicit SharedPtr(T* p, bool array = false) : ptr(p), is_array(array) { ++globalRefCount; }
 
     SharedPtr(const SharedPtr& other) noexcept
         : ptr(other.ptr), is_array(other.is_array)
     {
-        ++global_ref_count;
+        ++globalRefCount;
     }
 
     SharedPtr& operator=(const SharedPtr& other) noexcept
@@ -42,7 +43,7 @@ public:
             release();
             ptr = other.ptr;
             is_array = other.is_array;
-            ++global_ref_count;
+            ++globalRefCount;
         }
         return *this;
     }
@@ -82,13 +83,13 @@ public:
         return ptr[index];
     }
 
-    size_t use_count() const { return global_ref_count; }
+    size_t use_count() const { return globalRefCount; }
 
     void reset(T* new_ptr = nullptr, bool array = false)
     {
         release();
         ptr = new_ptr;
         is_array = array;
-        ++global_ref_count;
+        ++globalRefCount;
     }
 };
