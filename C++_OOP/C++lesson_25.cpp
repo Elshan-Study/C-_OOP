@@ -40,17 +40,37 @@
 //	return 0;
 //}
 
-class A
-{
-
-};
-
-class B final : public A
-{
-
-};
+//class A
+//{
+//
+//};
+//
+//class B final : public A
+//{
+//
+//};
 
 //class C : public B ЗАПРЕЩЕНО. КЛАСС В ИМЕЕТ ФИНАЛ
 //{
 //
 //};
+
+
+//class A
+//{
+//public:
+//	virtual void Biba() {};
+//};
+//
+//class B : public A
+//{
+//public:
+//	void Biba() override final {};
+//};
+//
+//class C : public B
+//{
+//public:
+//	/*void Biba() override {}; final запретил переопределение*/
+//};
+
