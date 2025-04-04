@@ -39,3 +39,18 @@
 //	obj->foo(); 
 //	return 0;
 //}
+
+class A
+{
+
+};
+
+class B final : public A
+{
+
+};
+
+//class C : public B гюопеыемн. йкюяя б хлеер тхмюк
+//{
+//
+//};
