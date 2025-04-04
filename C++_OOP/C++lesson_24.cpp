@@ -80,16 +80,16 @@ public:
 };
 
 
-int main()
-{
-	/*Player player("Player1", 10, 20);
-	player.attack();*/
-
-	Character** character = new Character*[2];
-	character[0] = new Player("Player1", 10, 20);
-	character[1] = new Orc("Orc1", 50, 100);
-
-	character[0]->attack();
-
-	return 0;
-}
+//int main()
+//{
+//	/*Player player("Player1", 10, 20);
+//	player.attack();*/
+//
+//	Character** character = new Character*[2];
+//	character[0] = new Player("Player1", 10, 20);
+//	character[1] = new Orc("Orc1", 50, 100);
+//
+//	character[0]->attack();
+//
+//	return 0;
+//}
