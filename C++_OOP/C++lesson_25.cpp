@@ -1,4 +1,7 @@
 #include <iostream>
+#include <string>
+#include <map>
+#include <vector>
 #define PI 3,14159265
 
 /*early building*/
