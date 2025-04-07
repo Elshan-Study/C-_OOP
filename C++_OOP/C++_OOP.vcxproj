@@ -140,6 +140,7 @@
     <ClCompile Include="C++lesson_23.cpp" />
     <ClCompile Include="C++lesson_24.cpp" />
     <ClCompile Include="C++lesson_25.cpp" />
+    <ClCompile Include="C++lesson_26.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="C++lesson_20.cpp" />
     <ClCompile Include="C++lesson_20_practice.cpp" />

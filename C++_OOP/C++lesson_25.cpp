@@ -128,20 +128,20 @@ public:
 	}
 };
 
-int main()
-{
-	/*Shape shape; prohibited by virtual method*/
-
-	Rectangle rec(4.0, 6.0);
-	Circle circle(5.0);
-
-	Shape* shapes[] = { &circle, &rec };
-
-	for (Shape* shape : shapes)
-	{
-		std::cout << "Area: " << shape->area() << std::endl;
-		std::cout << "Perimetr: " << shape->perimetr() << std::endl;
-	}
-
-	return 0;
-}
+//int main()
+//{
+//	/*Shape shape; prohibited by virtual method*/
+//
+//	Rectangle rec(4.0, 6.0);
+//	Circle circle(5.0);
+//
+//	Shape* shapes[] = { &circle, &rec };
+//
+//	for (Shape* shape : shapes)
+//	{
+//		std::cout << "Area: " << shape->area() << std::endl;
+//		std::cout << "Perimetr: " << shape->perimetr() << std::endl;
+//	}
+//
+//	return 0;
+//}
