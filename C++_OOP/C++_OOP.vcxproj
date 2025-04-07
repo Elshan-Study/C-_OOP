@@ -141,6 +141,7 @@
     <ClCompile Include="C++lesson_24.cpp" />
     <ClCompile Include="C++lesson_25.cpp" />
     <ClCompile Include="C++lesson_26.cpp" />
+    <ClCompile Include="Figure.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="C++lesson_20.cpp" />
     <ClCompile Include="C++lesson_20_practice.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Animal.h" />
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="Figure.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="SharedPtr.h" />
     <ClInclude Include="SuperVector.h" />

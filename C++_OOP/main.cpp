@@ -5,6 +5,7 @@
 #include "Zoo.h"
 #include "UniquePtr.h"
 #include "SharedPtr.h"
+#include "Figure.h"
 
 void DisplayVector(const SuperVector& vector)
 {
@@ -14,8 +15,26 @@ void DisplayVector(const SuperVector& vector)
 	}
 };
 
-//int main()
-//{
+void DrawBoard(Figure* figure)
+{
+	std::cout << "  a b c d e f g h\n";
+	for (int r = 8; r >= 1; --r) {
+		std::cout << r << " ";
+		for (char c = 'a'; c <= 'h'; ++c) {
+			if (figure && figure->GetCol() == c && figure->GetRow() == r)
+				std::cout << figure->GetSkin() << " ";
+			else
+				std::cout << ". ";
+		}
+		std::cout << "\n";
+	}
+};
+
+bool IsValidCoord(char col, int row) {
+	return col >= 'a' && col <= 'h' && row >= 1 && row <= 8;
+};
+//
+//int main() {
 //	/*homework 19*/
 //
 //	/*SuperVector v(3);
@@ -96,5 +115,76 @@ void DisplayVector(const SuperVector& vector)
 //	SharedPtr<int> arrayPtr(new int[5] {1, 2, 3, 4, 5}, true);
 //	std::cout << "arrayPtr[2]: " << arrayPtr[2] << ", use_count: " << arrayPtr.use_count() << std::endl;*/
 //
-//	return 0;
-//}
+
+/*lesson 24*/
+int main() {
+    Figure* figure = nullptr; 
+
+    while (true) {
+        std::cout << "\nChoose figure: \n";
+        std::cout << "1. White Pawn\n";
+        std::cout << "2. Black Pawn\n";
+        std::cout << "3. White Knight\n";
+        std::cout << "4. Black Knight\n";
+        std::cout << "5. White Bishop\n";
+        std::cout << "6. Black Bishop\n";
+        std::cout << "7. White Rook\n";
+        std::cout << "8. Black Rook\n";
+        std::cout << "9. White Queen\n";
+        std::cout << "10. Black Queen\n";
+        std::cout << "11. White King\n";
+        std::cout << "12. Black King\n";
+        std::cout << "0. Exit\n";
+
+        int choice;
+        std::cin >> choice;
+
+        if (choice == 0)
+            break;
+
+        if (figure != nullptr)
+            delete figure;
+
+        switch (choice)
+        {
+        case 1: figure = new Pawn('e', 2, false); break;
+        case 2: figure = new Pawn('e', 7, true); break;
+        case 3: figure = new Knight('b', 1, false); break;
+        case 4: figure = new Knight('b', 8, true); break;
+        case 5: figure = new Bishop('c', 1, false); break;
+        case 6: figure = new Bishop('c', 8, true); break;
+        case 7: figure = new Rook('a', 1, false); break;
+        case 8: figure = new Rook('a', 8, true); break;
+        case 9: figure = new Queen('d', 1, false); break;
+        case 10: figure = new Queen('d', 8, true); break;
+        case 11: figure = new King('e', 1, false); break;
+        case 12: figure = new King('e', 8, true); break;
+        default: continue;
+        }
+
+        while (true) {
+            DrawBoard(figure);
+            std::cout << "\nEnter coordinate (e.g. e4), 0 - exit: ";
+            char input[3];
+            std::cin >> input;
+
+            if (input[0] == '0')
+                break;
+
+            char col = input[0];
+            int row = input[1] - '0';
+
+            if (!IsValidCoord(col, row)) {
+                std::cout << "Incorrect coordinates\n";
+                continue;
+            }
+
+            figure->move(col, row);
+        }
+    }
+
+    if (figure != nullptr)
+        delete figure;
+
+    return 0;
+}
