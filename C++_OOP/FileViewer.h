@@ -31,9 +31,14 @@ public:
     void Display(const char* path) override {
         FILE* file = OpenFile(path, "r");
 
-        char buffer[1024];
-        while (fgets(buffer, sizeof(buffer), file)) { /*я узнал про то, что этот метод выводит всю строку*/
-            std::cout << buffer; 
+        //char buffer[1024];
+        //while (fgets(buffer, sizeof(buffer), file)) { /*я узнал про то, что этот метод выводит всю строку*/
+        //    std::cout << buffer; 
+        //}
+
+        unsigned char buffer[1];
+        while (fread(buffer, sizeof(buffer), 1, file)) {
+            std::cout << buffer[0];
         }
 
         CheckReadError(file);
@@ -44,7 +49,7 @@ public:
 class AsciiViewer : public FileViewer {
 public:
     void Display(const char* path) override {
-        FILE* file = OpenFile(path, "rb");
+        FILE* file = OpenFile(path, "r");
 
         unsigned char buffer[1];  
         while (fread(buffer, sizeof(buffer), 1, file)) {
@@ -60,7 +65,7 @@ public:
 class BinaryViewer : public FileViewer {
 public:
     void Display(const char* path) override {
-        FILE* file = OpenFile(path, "rb");
+        FILE* file = OpenFile(path, "r");
 
         /*HOW?*/
         /*unsigned char buffer[1];
