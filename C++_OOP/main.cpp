@@ -117,74 +117,74 @@ bool IsValidCoord(char col, int row) {
 //
 
 /*lesson 24*/
-int main() {
-    Figure* figure = nullptr; 
-
-    while (true) {
-        std::cout << "\nChoose figure: \n";
-        std::cout << "1. White Pawn\n";
-        std::cout << "2. Black Pawn\n";
-        std::cout << "3. White Knight\n";
-        std::cout << "4. Black Knight\n";
-        std::cout << "5. White Bishop\n";
-        std::cout << "6. Black Bishop\n";
-        std::cout << "7. White Rook\n";
-        std::cout << "8. Black Rook\n";
-        std::cout << "9. White Queen\n";
-        std::cout << "10. Black Queen\n";
-        std::cout << "11. White King\n";
-        std::cout << "12. Black King\n";
-        std::cout << "0. Exit\n";
-
-        int choice;
-        std::cin >> choice;
-
-        if (choice == 0)
-            break;
-
-        if (figure != nullptr)
-            delete figure;
-
-        switch (choice)
-        {
-        case 1: figure = new Pawn('e', 2, false); break;
-        case 2: figure = new Pawn('e', 7, true); break;
-        case 3: figure = new Knight('b', 1, false); break;
-        case 4: figure = new Knight('b', 8, true); break;
-        case 5: figure = new Bishop('c', 1, false); break;
-        case 6: figure = new Bishop('c', 8, true); break;
-        case 7: figure = new Rook('a', 1, false); break;
-        case 8: figure = new Rook('a', 8, true); break;
-        case 9: figure = new Queen('d', 1, false); break;
-        case 10: figure = new Queen('d', 8, true); break;
-        case 11: figure = new King('e', 1, false); break;
-        case 12: figure = new King('e', 8, true); break;
-        default: continue;
-        }
-
-        while (true) {
-            DrawBoard(figure);
-            std::cout << "\nEnter coordinate (e.g. e4), 0 - exit: ";
-            char input[3];
-            std::cin >> input;
-
-            if (input[0] == '0')
-                break;
-
-            char col = input[0];
-            int row = input[1] - '0';
-
-            if (!IsValidCoord(col, row)) {
-                std::cout << "Incorrect coordinates\n";
-                continue;
-            }
-
-            figure->move(col, row);
-        }
-    }
-
-    if (figure != nullptr)
-        delete figure;
-
-    return 0;
-}
+//int main() {
+//    Figure* figure = nullptr; 
+//
+//    while (true) {
+//        std::cout << "\nChoose figure: \n";
+//        std::cout << "1. White Pawn\n";
+//        std::cout << "2. Black Pawn\n";
+//        std::cout << "3. White Knight\n";
+//        std::cout << "4. Black Knight\n";
+//        std::cout << "5. White Bishop\n";
+//        std::cout << "6. Black Bishop\n";
+//        std::cout << "7. White Rook\n";
+//        std::cout << "8. Black Rook\n";
+//        std::cout << "9. White Queen\n";
+//        std::cout << "10. Black Queen\n";
+//        std::cout << "11. White King\n";
+//        std::cout << "12. Black King\n";
+//        std::cout << "0. Exit\n";
+//
+//        int choice;
+//        std::cin >> choice;
+//
+//        if (choice == 0)
+//            break;
+//
+//        if (figure != nullptr)
+//            delete figure;
+//
+//        switch (choice)
+//        {
+//        case 1: figure = new Pawn('e', 2, false); break;
+//        case 2: figure = new Pawn('e', 7, true); break;
+//        case 3: figure = new Knight('b', 1, false); break;
+//        case 4: figure = new Knight('b', 8, true); break;
+//        case 5: figure = new Bishop('c', 1, false); break;
+//        case 6: figure = new Bishop('c', 8, true); break;
+//        case 7: figure = new Rook('a', 1, false); break;
+//        case 8: figure = new Rook('a', 8, true); break;
+//        case 9: figure = new Queen('d', 1, false); break;
+//        case 10: figure = new Queen('d', 8, true); break;
+//        case 11: figure = new King('e', 1, false); break;
+//        case 12: figure = new King('e', 8, true); break;
+//        default: continue;
+//        }
+//
+//        while (true) {
+//            DrawBoard(figure);
+//            std::cout << "\nEnter coordinate (e.g. e4), 0 - exit: ";
+//            char input[3];
+//            std::cin >> input;
+//
+//            if (input[0] == '0')
+//                break;
+//
+//            char col = input[0];
+//            int row = input[1] - '0';
+//
+//            if (!IsValidCoord(col, row)) {
+//                std::cout << "Incorrect coordinates\n";
+//                continue;
+//            }
+//
+//            figure->move(col, row);
+//        }
+//    }
+//
+//    if (figure != nullptr)
+//        delete figure;
+//
+//    return 0;
+//}
