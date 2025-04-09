@@ -91,83 +91,83 @@ void bagdagul()
     std::cout << "bagdagul" << std::endl;
 }
 
-int main() {
-    // static cast ==============================
-    // double d = 3.14;
-    // int a = static_cast<int>(d);
-    // std::cout << a << '\n';
-
-    // class Base{};
-    // class Derived : public Base{};
-    // class Derived2 : public Base
-    // {
-    //     public:
-    //     void foo ()
-    //     {
-    //         std::cout << "foo" << std::endl;
-    //     }
-    // };
-
-    // Derived derived;
-    // Base * basePtr = static_cast<Base*>(&derived); // upcast
-    // std::cout << typeid(basePtr).name() << '\n';
-
-    // Base base;
-    // Derived * derivedPtr = static_cast<Derived*>(&base); // downcast
-    // std::cout << typeid(derivedPtr).name() << '\n';
-
-    // Base* base = new Base();
-    // Derived2* derived = static_cast<Derived2*>(base); // downcast
-
-    // Base* base = new Base();
-    // Derived2* derived = static_cast<Derived2*>(base); // downcast
-    // derived->foo();
-
-    // int a = 5;
-    // void* v_ptr = &a;
-    // std::cout << *(static_cast<int*>(v_ptr)) << std::endl;
-
-    // dynamic cast ==============================
-
-    // int a= 4;
-    // double b = dynamic_cast<double>(a);
-
-    // Base* base_ptr = new Derived();
-    // Derived* derived_ptr = dynamic_cast<Derived*>(base_ptr); // safe downcast
-    //
-    // if (derived_ptr)
-    // {
-    //     derived_ptr->Foo();
-    //     derived_ptr->Print();
-    //     base_ptr->Print();
-    // }
-
-    // Base* base = new Derived();
-    // Derived* d = dynamic_cast<Derived*>(base);
-    // test(d);
-
-
-
-    //Dog *dog = new Dog();
-    //Cat *cat = new Cat();
-    //play_with_animal(dog);
-    //play_with_animal(cat);
-
-
-    // reinterpret cast ==============================
-    // int a = 50;
-    // uintptr_t ptr_value = reinterpret_cast<uintptr_t>(&a);
-    // int* ptr = reinterpret_cast<int*>(ptr_value);
-    // std::cout << *ptr << std::endl;
-
-    // void * ptr_func = reinterpret_cast<void *>(bagdagul);
-    // void(*original_function)() = reinterpret_cast<void(*)()>(ptr_func);
-    // original_function();
-
-    // const cast ==============================
-
-    const char* const_str = "Hello World!";
-    my_print(const_cast<char*>(const_str));
-
-    return 0;
-}
+//int main() {
+//    // static cast ==============================
+//    // double d = 3.14;
+//    // int a = static_cast<int>(d);
+//    // std::cout << a << '\n';
+//
+//    // class Base{};
+//    // class Derived : public Base{};
+//    // class Derived2 : public Base
+//    // {
+//    //     public:
+//    //     void foo ()
+//    //     {
+//    //         std::cout << "foo" << std::endl;
+//    //     }
+//    // };
+//
+//    // Derived derived;
+//    // Base * basePtr = static_cast<Base*>(&derived); // upcast
+//    // std::cout << typeid(basePtr).name() << '\n';
+//
+//    // Base base;
+//    // Derived * derivedPtr = static_cast<Derived*>(&base); // downcast
+//    // std::cout << typeid(derivedPtr).name() << '\n';
+//
+//    // Base* base = new Base();
+//    // Derived2* derived = static_cast<Derived2*>(base); // downcast
+//
+//    // Base* base = new Base();
+//    // Derived2* derived = static_cast<Derived2*>(base); // downcast
+//    // derived->foo();
+//
+//    // int a = 5;
+//    // void* v_ptr = &a;
+//    // std::cout << *(static_cast<int*>(v_ptr)) << std::endl;
+//
+//    // dynamic cast ==============================
+//
+//    // int a= 4;
+//    // double b = dynamic_cast<double>(a);
+//
+//    // Base* base_ptr = new Derived();
+//    // Derived* derived_ptr = dynamic_cast<Derived*>(base_ptr); // safe downcast
+//    //
+//    // if (derived_ptr)
+//    // {
+//    //     derived_ptr->Foo();
+//    //     derived_ptr->Print();
+//    //     base_ptr->Print();
+//    // }
+//
+//    // Base* base = new Derived();
+//    // Derived* d = dynamic_cast<Derived*>(base);
+//    // test(d);
+//
+//
+//
+//    //Dog *dog = new Dog();
+//    //Cat *cat = new Cat();
+//    //play_with_animal(dog);
+//    //play_with_animal(cat);
+//
+//
+//    // reinterpret cast ==============================
+//    // int a = 50;
+//    // uintptr_t ptr_value = reinterpret_cast<uintptr_t>(&a);
+//    // int* ptr = reinterpret_cast<int*>(ptr_value);
+//    // std::cout << *ptr << std::endl;
+//
+//    // void * ptr_func = reinterpret_cast<void *>(bagdagul);
+//    // void(*original_function)() = reinterpret_cast<void(*)()>(ptr_func);
+//    // original_function();
+//
+//    // const cast ==============================
+//
+//    const char* const_str = "Hello World!";
+//    my_print(const_cast<char*>(const_str));
+//
+//    return 0;
+//}

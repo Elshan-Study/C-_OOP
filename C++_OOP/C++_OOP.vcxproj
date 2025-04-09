@@ -143,6 +143,8 @@
     <ClCompile Include="C++lesson_26.cpp" />
     <ClCompile Include="C++lesson_27.cpp" />
     <ClCompile Include="Figure.cpp" />
+    <ClCompile Include="FileException.cpp" />
+    <ClCompile Include="FileViewer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="C++lesson_20.cpp" />
     <ClCompile Include="C++lesson_20_practice.cpp" />
@@ -160,6 +162,8 @@
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Figure.h" />
+    <ClInclude Include="FileException.h" />
+    <ClInclude Include="FileViewer.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="SharedPtr.h" />
     <ClInclude Include="SuperVector.h" />

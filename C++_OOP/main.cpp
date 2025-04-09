@@ -6,6 +6,7 @@
 #include "UniquePtr.h"
 #include "SharedPtr.h"
 #include "Figure.h"
+#include "FileViewer.h"
 
 void DisplayVector(const SuperVector& vector)
 {
@@ -188,3 +189,31 @@ bool IsValidCoord(char col, int row) {
 //
 //    return 0;
 //}
+
+/*homework 25*/
+int main() {
+    const char* path = "example.txt";
+
+    try {
+        std::unique_ptr<FileViewer> viewer;
+
+        viewer = std::make_unique<TextViewer>();
+        std::cout << "[TextViewer]\n";
+        viewer->Display(path);
+
+        viewer = std::make_unique<AsciiViewer>();
+        std::cout << "\n[AsciiViewer]\n";
+        viewer->Display(path);
+
+        viewer = std::make_unique<BinaryViewer>();
+        std::cout << "\n[BinaryViewer]\n";
+        viewer->Display(path);
+
+    }
+    catch (const FileException& ex) {
+        std::cerr << ex.what() << '\n';
+        return 1;
+    }
+
+    return 0;
+}
