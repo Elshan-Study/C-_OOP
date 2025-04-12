@@ -142,6 +142,7 @@
     <ClCompile Include="C++lesson_25.cpp" />
     <ClCompile Include="C++lesson_26.cpp" />
     <ClCompile Include="C++lesson_27.cpp" />
+    <ClCompile Include="C++lesson_28.cpp" />
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="FileException.cpp" />
     <ClCompile Include="FileViewer.cpp" />
