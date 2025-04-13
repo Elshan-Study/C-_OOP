@@ -143,6 +143,7 @@
     <ClCompile Include="C++lesson_26.cpp" />
     <ClCompile Include="C++lesson_27.cpp" />
     <ClCompile Include="C++lesson_28.cpp" />
+    <ClCompile Include="Expedition.cpp" />
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="FileException.cpp" />
     <ClCompile Include="FileViewer.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Animal.h" />
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="Expedition.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="FileException.h" />
     <ClInclude Include="FileViewer.h" />

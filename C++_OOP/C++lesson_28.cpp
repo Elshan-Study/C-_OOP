@@ -77,68 +77,68 @@ void printStudents(const StudentArray& students)
 // ofstream - write to file
 
 
-int main() {
-    // std::ofstream fOut("example.txt");
-    //
-    // if (!fOut)
-    // {
-    //     std::cerr << "Error opening file" << '\n';
-    //     return 1;
-    // }
-    //
-    // fOut << "Hello world!\n";
-    // fOut << 42 << "-----" << 67.4 << "\n";
-    //
-    // fOut.close();
-
-
-
-    // std::ifstream fIn("example.txt");
-    //
-    // if (!fIn)
-    // {
-    //     std::cerr << "Error opening file" << '\n';
-    //     return 1;
-    // }
-
-    // std::string txt;
-    //
-    // while (std::getline(fIn, txt))
-    // {
-    //     std::cout << txt << '\n';
-    // }
-    // fIn.seekg(0);
-    // std::string text;
-    // int counter;
-    // float biba;
-    //
-    // std::getline(fIn, text);
-    // fIn >> counter >> biba;
-
-
-
-    // std::stringstream buffer;
-    // buffer << fIn.rdbuf();
-    // std::string boba = buffer.str();
-    // std::cout << boba << '\n';
-
-    // fIn.close();
-
-    // Student student_1 = {"John", 17, 110};
-    // Student student_2 = {"Ehmed", 19, 75};
-    // Student student_3 = {"Lalezar", 68, 145};
-    //
-    StudentArray students;
-    // students.data[0] = {"John", 17, 110};
-    // students.data[1] = {"Ehmed", 19, 75};
-    // students.data[2] = {"Lalezar", 68, 145};
-    //
-    // students.count = 3;
-
-    //writeStudentsToFile(students, "students.txt");
-
-    readStudentsFromFile(students, "students.txt");
-    printStudents(students);
-
-    return 0;
-}
+//int main() {
+//    // std::ofstream fOut("example.txt");
+//    //
+//    // if (!fOut)
+//    // {
+//    //     std::cerr << "Error opening file" << '\n';
+//    //     return 1;
+//    // }
+//    //
+//    // fOut << "Hello world!\n";
+//    // fOut << 42 << "-----" << 67.4 << "\n";
+//    //
+//    // fOut.close();
+//
+//
+//
+//    // std::ifstream fIn("example.txt");
+//    //
+//    // if (!fIn)
+//    // {
+//    //     std::cerr << "Error opening file" << '\n';
+//    //     return 1;
+//    // }
+//
+//    // std::string txt;
+//    //
+//    // while (std::getline(fIn, txt))
+//    // {
+//    //     std::cout << txt << '\n';
+//    // }
+//    // fIn.seekg(0);
+//    // std::string text;
+//    // int counter;
+//    // float biba;
+//    //
+//    // std::getline(fIn, text);
+//    // fIn >> counter >> biba;
+//
+//
+//
+//    // std::stringstream buffer;
+//    // buffer << fIn.rdbuf();
+//    // std::string boba = buffer.str();
+//    // std::cout << boba << '\n';
+//
+//    // fIn.close();
+//
+//    // Student student_1 = {"John", 17, 110};
+//    // Student student_2 = {"Ehmed", 19, 75};
+//    // Student student_3 = {"Lalezar", 68, 145};
+//    //
+//    StudentArray students;
+//    // students.data[0] = {"John", 17, 110};
+//    // students.data[1] = {"Ehmed", 19, 75};
+//    // students.data[2] = {"Lalezar", 68, 145};
+//    //
+//    // students.count = 3;
+//
+//    //writeStudentsToFile(students, "students.txt");
+//
+//    readStudentsFromFile(students, "students.txt");
+//    printStudents(students);
+//
+//    return 0;
+//}

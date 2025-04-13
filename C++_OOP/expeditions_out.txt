@@ -1,0 +1,3 @@
+North;Arctic Quest;2015;-32.5
+South;Penguin Study;2018;150
+North;Frozen Trail;2020;-40
