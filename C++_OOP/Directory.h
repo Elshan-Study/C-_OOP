@@ -22,10 +22,10 @@ public:
 	void setAddress(const std::string& address) { this->address = address; }
 	void setOccupation(const std::string& occupation) { this->occupation = occupation; }
 
-	std::string getFirmName() { return firmName; }
-	std::string getOwner() { return owner; }
-	std::string getPhone() { return phone; }
-	std::string getAddress() { return address; }
-	std::string getOccupation() { return occupation; }
+	std::string& getFirmName() { return firmName; }
+	std::string& getOwner() { return owner; }
+	std::string& getPhone() { return phone; }
+	std::string& getAddress() { return address; }
+	std::string& getOccupation() { return occupation; }
 };
 
