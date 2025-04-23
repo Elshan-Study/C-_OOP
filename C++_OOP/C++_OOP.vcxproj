@@ -130,6 +130,7 @@
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="BankAccount.cpp" />
     <ClCompile Include="C++lesson30_2.cpp" />
+    <ClCompile Include="C++lesson32_2.cpp" />
     <ClCompile Include="C++lesson_21.cpp" />
     <ClCompile Include="C++lesson_16.cpp" />
     <ClCompile Include="C++lesson_16hw.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="C++lesson_28.cpp" />
     <ClCompile Include="C++lesson_29.cpp" />
     <ClCompile Include="C++lesson_31.cpp" />
+    <ClCompile Include="C++lesson_32.cpp" />
     <ClCompile Include="Directory.cpp" />
     <ClCompile Include="Expedition.cpp" />
     <ClCompile Include="Figure.cpp" />

@@ -364,26 +364,26 @@
 //}
 
 //homework 31
-int main()
-{
-    LinkedList<int> list;
-
-    list.InsertAtEnd(10);
-    list.InsertAtEnd(20);
-    list.InsertAtEnd(30);
-    list.InsertAtEnd(40);
-
-    std::cout << "List with iterator: ";
-    for (auto value : list)
-    {
-        std::cout << value << " ";
-    }
-    std::cout << "\n";
-
-    auto it = list.begin();
-    std::cout << "First element: " << *it << "\n";         
-    std::cout << "Second element (it + 1): " << *(it + 1) << "\n"; 
-    std::cout << "Back (it + 2 - 1): " << *((it + 2) - 1) << "\n"; 
-
-    return 0;
-}
+//int main()
+//{
+//    LinkedList<int> list;
+//
+//    list.InsertAtEnd(10);
+//    list.InsertAtEnd(20);
+//    list.InsertAtEnd(30);
+//    list.InsertAtEnd(40);
+//
+//    std::cout << "List with iterator: ";
+//    for (auto value : list)
+//    {
+//        std::cout << value << " ";
+//    }
+//    std::cout << "\n";
+//
+//    auto it = list.begin();
+//    std::cout << "First element: " << *it << "\n";         
+//    std::cout << "Second element (it + 1): " << *(it + 1) << "\n"; 
+//    std::cout << "Back (it + 2 - 1): " << *((it + 2) - 1) << "\n"; 
+//
+//    return 0;
+//}
