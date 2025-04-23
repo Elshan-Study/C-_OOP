@@ -7,6 +7,7 @@
 #include "Expedition.h"
 #include "Directory.h"
 #include "LinkedList.h"
+#include "HashTable.h"
 
 //homework 28
 
@@ -384,6 +385,45 @@
 //    std::cout << "First element: " << *it << "\n";         
 //    std::cout << "Second element (it + 1): " << *(it + 1) << "\n"; 
 //    std::cout << "Back (it + 2 - 1): " << *((it + 2) - 1) << "\n"; 
+//
+//    return 0;
+//}
+
+//homework 32
+//int main() {
+//    HashTable<std::string, int> table(8);
+//
+//    table.Add("apple", 10);
+//    table.Add("banana", 20);
+//    table.Add("cherry", 30);
+//
+//    std::cout << "apple: " << table("apple") << std::endl;
+//    std::cout << "banana: " << table("banana") << std::endl;
+//
+//    table.Add("banana", 25);
+//    std::cout << "banana (updated): " << table("banana") << std::endl;
+//
+//    table.Remove("apple");
+//
+//    try {
+//        std::cout << "apple: " << table("apple") << std::endl;
+//    }
+//    catch (const std::out_of_range& e) {
+//        std::cout << "Exception caught: " << e.what() << std::endl;
+//    }
+//
+//    std::cout << "Load factor: " << table.GetLoadFactor() << std::endl;
+//
+//    HashTable<std::string, int> table2(4);
+//
+//    table2.Add("a", 1);
+//    table2.Add("b", 2);
+//    table2.Add("c", 3);
+//    table2.Add("d", 4); // Rehash
+//    table2.Add("e", 5);
+//
+//    std::cout << "Load factor: " << table2.GetLoadFactor() << "\n";
+//    std::cout << "d = " << table2("d") << ", e = " << table2("e") << "\n";
 //
 //    return 0;
 //}

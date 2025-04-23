@@ -153,6 +153,7 @@
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="FileException.cpp" />
     <ClCompile Include="FileViewer.cpp" />
+    <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="C++lesson_20.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="FileException.h" />
     <ClInclude Include="FileViewer.h" />
     <ClInclude Include="Fraction.h" />
+    <ClInclude Include="HashTable.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="SharedPtr.h" />
     <ClInclude Include="SuperVector.h" />

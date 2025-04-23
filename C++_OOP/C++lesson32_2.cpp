@@ -15,12 +15,12 @@ namespace MsSql
 
 void* socket() { return nullptr;}
 
-int main()
-{
-	void* socket = ::socket();
-
-	std::cout << socket << "\n";
-
-	MsSql::connect("127.0.0.1");
-	MsSql::disconnect();
-}
+//int main()
+//{
+//	void* socket = ::socket();
+//
+//	std::cout << socket << "\n";
+//
+//	MsSql::connect("127.0.0.1");
+//	MsSql::disconnect();
+//}
