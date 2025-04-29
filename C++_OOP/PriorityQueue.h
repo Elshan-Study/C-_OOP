@@ -5,14 +5,14 @@
 template<typename T>
 struct Less {
     bool operator()(const T& a, const T& b) const {
-        return a > b; // для min-heap
+        return a > b; 
     }
 };
 
 template<typename T>
 struct Greater {
     bool operator()(const T& a, const T& b) const {
-        return a < b; // для max-heap
+        return a < b; 
     }
 };
 
