@@ -165,6 +165,8 @@
     <ClCompile Include="Customer.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="C++lesson_18hw.cpp" />
+    <ClCompile Include="PriorityQueue.cpp" />
+    <ClCompile Include="Queue.cpp" />
     <ClCompile Include="SharedPtr.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="SuperVector.cpp" />
@@ -185,6 +187,8 @@
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="PriorityQueue.h" />
+    <ClInclude Include="Queue.h" />
     <ClInclude Include="SharedPtr.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="SuperVector.h" />

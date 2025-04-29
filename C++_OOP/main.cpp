@@ -9,6 +9,8 @@
 #include "LinkedList.h"
 #include "HashTable.h"
 #include "Stack.h"
+#include "Queue.h"
+#include "PriorityQueue.h"
 
 //homework 28
 
@@ -472,6 +474,34 @@
 //
 //    std::cout << "Expr1 is " << (IsBracketSequenceCorrect(expr1) ? "OK" : "NOT OK") << '\n';
 //    std::cout << "Expr2 is " << (IsBracketSequenceCorrect(expr2) ? "OK" : "NOT OK") << '\n';
+//
+//    return 0;
+//}
+
+
+//homework 33_2
+//int main() {
+//    Queue<int> q;
+//    q.Enqueue(1);
+//    q.Enqueue(2);
+//    q.Enqueue(3);
+//    std::cout << "Queue: " << q << std::endl;
+//
+//    PriorityQueue<int, Less<int>> minHeap;
+//    minHeap.Enqueue(4);
+//    minHeap.Enqueue(2);
+//    minHeap.Enqueue(9);
+//    minHeap.Enqueue(1);
+//
+//    std::cout << "MinHeap: " << minHeap << std::endl;
+//
+//    PriorityQueue<int, Greater<int>> maxHeap;
+//    maxHeap.Enqueue(4);
+//    maxHeap.Enqueue(2);
+//    maxHeap.Enqueue(9);
+//    maxHeap.Enqueue(1);
+//
+//    std::cout << "MaxHeap: " << maxHeap << std::endl;
 //
 //    return 0;
 //}
