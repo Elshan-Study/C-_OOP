@@ -166,6 +166,7 @@
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="C++lesson_18hw.cpp" />
     <ClCompile Include="SharedPtr.cpp" />
+    <ClCompile Include="Stack.cpp" />
     <ClCompile Include="SuperVector.cpp" />
     <ClCompile Include="SuperVectorT.cpp" />
     <ClCompile Include="UniquePtr.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="SharedPtr.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="SuperVector.h" />
     <ClInclude Include="SuperVectorT.h" />
     <ClInclude Include="UniquePtr.h" />

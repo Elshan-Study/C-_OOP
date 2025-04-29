@@ -8,6 +8,7 @@
 #include "Directory.h"
 #include "LinkedList.h"
 #include "HashTable.h"
+#include "Stack.h"
 
 //homework 28
 
@@ -424,6 +425,53 @@
 //
 //    std::cout << "Load factor: " << table2.GetLoadFactor() << "\n";
 //    std::cout << "d = " << table2("d") << ", e = " << table2("e") << "\n";
+//
+//    return 0;
+//}
+
+//homework 33_1
+//bool IsBracketSequenceCorrect(const std::string& str) {
+//    Stack<char> stack;
+//
+//    for (char ch : str) {
+//        if (ch == '(' || ch == '{' || ch == '[') {
+//            stack.Push(ch);
+//        }
+//        else if (ch == ')' || ch == '}' || ch == ']') {
+//            if (stack.Empty()) return false;
+//
+//            char top = stack.Pop();
+//            if ((ch == ')' && top != '(') ||
+//                (ch == '}' && top != '{') ||
+//                (ch == ']' && top != '[')) {
+//                return false;
+//            }
+//        }
+//    }
+//
+//    return stack.Empty(); 
+//}
+//
+//int main() {
+//    // Stack demo
+//    Stack<int> intStack;
+//    intStack.Push(10);
+//    intStack.Push(20);
+//    intStack.Push(30);
+//
+//    PrintStack(intStack);
+//
+//    std::cout << "Top element: " << intStack.Top() << '\n';
+//    std::cout << "Popped element: " << intStack.Pop() << '\n';
+//
+//    PrintStack(intStack);
+//
+//    // Bracket checking
+//    std::string expr1 = "(1{2[test]})";
+//    std::string expr2 = "(1{2[test}])";
+//
+//    std::cout << "Expr1 is " << (IsBracketSequenceCorrect(expr1) ? "OK" : "NOT OK") << '\n';
+//    std::cout << "Expr2 is " << (IsBracketSequenceCorrect(expr2) ? "OK" : "NOT OK") << '\n';
 //
 //    return 0;
 //}

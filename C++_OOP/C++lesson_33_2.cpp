@@ -73,19 +73,19 @@ void Print()
 {
 }
 
-template <typename T, typename... TArgs>
-void Print(T arg, TArgs... args)
-{
-    std::cout << arg << '\n';
-
-    Print(args...);
-}
-
-template <typename... TArgs>
-auto Sum(TArgs... Args)
-{
-    return (Args + ...); // 10 + 20 + 30
-}
+//template <typename T, typename... TArgs>
+//void Print(T arg, TArgs... args)
+//{
+//    std::cout << arg << '\n';
+//
+//    Print(args...);
+//}
+//
+//template <typename... TArgs>
+//auto Sum(TArgs... Args)
+//{
+//    return (Args + ...); // 10 + 20 + 30
+//}
 
 template <typename TType>
 class MyArray
